@@ -1,0 +1,37 @@
+<h1><%= @student.name %>'s Result</h1>
+
+<p>
+  <strong>Name:</strong>
+  <%= @student.roll_no %>
+</p>
+
+<p>
+  <strong>Maths:</strong>
+  <%= @student.maths %>
+</p>
+
+<p>
+  <strong>Physics:</strong>
+  <%= @student.physics %>
+</p>
+
+<p>
+  <strong>Chemistry:</strong>
+  <%= @student.chemistry %>
+</p>
+
+<p>
+  <strong>Total Marks Obtained:</strong>
+  <% total_marks = @student.maths.to_i + @student.physics.to_i + @student.chemistry.to_i %>
+  <%= total_marks %>
+  <p>
+  <strong>Result:</strong>
+  <% if total_marks>=99 %>
+  <%= "PASS" %>
+  <% else %>
+  <%= "FAIL" %>
+  <% end %>
+  <p>
+</p>
+
+<%= link_to 'Back', '/students/index' %>

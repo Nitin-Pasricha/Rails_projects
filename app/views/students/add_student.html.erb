@@ -1,0 +1,35 @@
+
+<h1>Add Student</h1>
+<%= form_with url:'/students/add_student', method: :post do |form| %>
+    <div class = 'field'>
+        <%= form.label :roll_no%>
+        <%= form.number_field :roll_no %>
+    </div>
+
+    <div class = 'field'>
+        <%= form.label :name %>
+        <%= form.text_field :name %>
+    </div>
+
+    <div class = 'field'>
+        <%= form.label :maths%>
+        <%= form.number_field :maths %>
+    </div>
+
+    <div class = 'field'>
+        <%= form.label :physics%>
+        <%= form.number_field :physics %>
+    </div>
+
+    <div class = 'field'>
+        <%= form.label :chemistry %>
+        <%= form.number_field :chemistry %>
+    </div>
+
+    <div class="actions">
+        <%= form.submit "Add Student"%>
+    </div>
+
+<% end %>
+
+<%= link_to 'Back', '/students/index' %>

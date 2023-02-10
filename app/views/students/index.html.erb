@@ -1,0 +1,33 @@
+<h1>Students Result</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Roll No.</th>
+            <th>Student Name</th>
+            <th>Maths</th>
+            <th>Physics</th>
+            <th>Chemistry</th>
+            <th>Total marks obtained</th>
+            <th colspan=3>Action</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% @students.each do |student| %>
+            <tr>
+                <td><%= student.roll_no %></td>
+                <td><%= student.name %></td>
+                <td><%= student.maths %></td>
+                <td><%= student.physics %></td>
+                <td><%= student.chemistry %></td>
+                <td><%= student.maths.to_i + student.physics.to_i + student.chemistry.to_i %></td>
+                <td><%= link_to 'Show Result', show_student_path(student)%>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+<br>
+<%= will_paginate @students %>
+<br>
+<%= link_to 'Add Student', '/students/add_student' %>
